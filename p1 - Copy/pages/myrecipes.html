@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="../images/logo.png" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
+        <title>Easy Chef</title>
+    </head>
+    <body class="bg-yellow-50" style="font-family: 'Inter', 'sans-serif'">
+        <!-- Navbar Start -->
+        <div class="bg-white p-2 shadow-sm sticky w-full top-0 left-0 z-20">
+            <div class="container flex flex-wrap justify-between mx-auto">
+                <a href="index.html" class="flex items-center">
+                    <img src="../images/logo.png" alt="Easy Chef Logo" class="mr-3 h-12" />
+                    <span class="text-2xl font-bold text-yellow-500">Easy Chef</span>
+                </a>
+                <div class="flex md:order-2">
+                    <div class="flex items-center md:order-2">
+                        <button
+                            type="button"
+                            data-collapse-toggle="navbar-search"
+                            aria-controls="navbar-search"
+                            aria-expanded="false"
+                            class="md:hidden text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 rounded-lg text-sm p-2.5 mr-1"
+                        >
+                            <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                                    clip-rule="evenodd"
+                                ></path>
+                            </svg>
+                        </button>
+                        <div aria-hidden="true" class="px-2 max-sm:hidden max-md:hidden">
+                            <a
+                                href="newRecipe.html"
+                                aria-hidden="true"
+                                class="text-white bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-600 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                                >Create Recipe</a
+                            >
+                        </div>
+                        <div class="relative hidden md:block">
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                <svg
+                                    class="w-5 h-5 text-gray-500"
+                                    aria-hidden="true"
+                                    fill="currentColor"
+                                    viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                                        clip-rule="evenodd"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <input
+                                type="text"
+                                id="search-navbar"
+                                class="block w-full pl-10 text-sm border-gray-300 rounded-lg bg-gray-50 focus:ring-gray-300 focus:border-gray-300"
+                                placeholder="Search..."
+                            />
+                        </div>
+                        <button
+                            data-collapse-toggle="navbar-search"
+                            type="button"
+                            aria-controls="navbar-search"
+                            aria-expanded="false"
+                            class="md:hidden inline-flex items-center p-2 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                        >
+                            <svg class="h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                                    clip-rule="evenodd"
+                                ></path>
+                            </svg>
+                        </button>
+                        <button
+                            type="button"
+                            class="flex ml-3 text-sm rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300"
+                            data-dropdown-toggle="user-dropdown"
+                            data-dropdown-placement="bottom"
+                        >
+                            <img class="h-8 rounded-full" src="../images/pfp.jpeg" alt="user photo" />
+                        </button>
+                        <div class="hidden my-4 text-base bg-white divide-y divide-gray-100 rounded-lg shadow" id="user-dropdown">
+                            <div class="px-4 py-3">
+                                <span class="block text-sm text-gray-900">Samir Ghias</span>
+                                <span class="block text-sm font-medium text-gray-500 truncate">samir.ghias99@gmail.com</span>
+                            </div>
+                            <ul class="py-2">
+                                <li><a href="editprofile.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a></li>
+                                <li><a href="myrecipes.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">My Recipes</a></li>
+                                <li><a href="shoppinglist.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Shopping List</a></li>
+                                <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
+                    <div class="relative mt-3 md:hidden">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <svg
+                                class="w-5 h-5 text-gray-500"
+                                aria-hidden="true"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                                    clip-rule="evenodd"
+                                ></path>
+                            </svg>
+                        </div>
+                        <input
+                            type="text"
+                            id="search-navbar"
+                            class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-yellow-500 focus:border-yellow-500"
+                            placeholder="Search..."
+                        />
+                    </div>
+                    <div class="flex justify-center my-3 md:hidden">
+                        <a
+                            href="newRecipe.html"
+                            class="text-white w-full bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-600 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                            >Create Recipe</a
+                        >
+                    </div>
+                    <ul
+                        class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white"
+                    >
+                        <li>
+                            <a
+                                href="index.html"
+                                class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-500 md:p-0"
+                                >Home</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="myrecipes.html"
+                                class="block py-2 pl-3 pr-4 text-white bg-yellow-500 rounded md:bg-transparent md:text-yellow-500 md:p-0"
+                                aria-current="page"
+                                >My Recipes</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="editprofile.html"
+                                class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-500 md:p-0"
+                                >Profile</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar End -->
+
+        <div class="mt-8 mx-auto w-9/12">
+            <h3 class="text-5xl font-semibold text-gray-900">My Recipes</h3>
+
+            <!-- Search Recipes -->
+            <form class="items-center py-6" title="Search">
+                <div class="flex">
+                    <div class="relative w-full">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <svg
+                                aria-hidden="true"
+                                class="w-5 h-5 text-gray-500"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                                    clip-rule="evenodd"
+                                ></path>
+                            </svg>
+                        </div>
+                        <input
+                            type="text"
+                            class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full pl-10 p-2.5"
+                            placeholder="Search Recipes..."
+                            required
+                        />
+                        <button
+                            data-collapse-toggle="mega-menu-full-image-dropdown"
+                            type="button"
+                            class="absolute inset-y-0 right-0 flex items-center pr-3"
+                            title="Filter"
+                        >
+                            <svg
+                                aria-hidden="true"
+                                class="w-4 h-4 text-gray-500"
+                                viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"
+                                />
+                            </svg>
+                        </button>
+                    </div>
+                    <button
+                        type="submit"
+                        class="inline-flex items-center py-2.5 px-3 ml-2 text-sm font-medium text-white bg-yellow-500 rounded-lg hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-600"
+                    >
+                        <svg
+                            aria-hidden="true"
+                            class="w-5 h-5 mr-2 -ml-1"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                            ></path></svg>
+                        >Search
+                    </button>
+                </div>
+
+                <div id="mega-menu-full-image-dropdown" class="hidden w-full mt-1 bg-white border-b border-gray-200 shadow-sm rounded-lg">
+                    <h2 class="px-5 py-2 text-3xl font-semibold text-gray-900">Filter</h2>
+                    <div class="px-5">
+                        <h3 class="mb-5 text-lg font-medium text-gray-900">Choose diet:</h3>
+                        <ul class="grid items-center gap-5 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2">
+                            <li>
+                                <input type="checkbox" id="veg-option" class="hidden peer" required="" />
+                                <label
+                                    for="veg-option"
+                                    class="flex justify-center items-center p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-yellow-500 hover:text-gray-800 peer-checked:text-gray-800 hover:bg-gray-50"
+                                >
+                                    <div class="flex">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 text-green-600" viewBox="0 0 24 24" fill="currentColor">
+                                            <path
+                                                d="M14 10L4 20M20 7C20 12.5228 15.5228 17 10 17C9.08396 17 8.19669 16.8768 7.35385 16.6462C7.12317 15.8033 7 14.916 7 14C7 8.47715 11.4772 4 17 4C17.916 4 18.8033 4.12317 19.6462 4.35385C19.8768 5.19669 20 6.08396 20 7Z"
+                                                stroke="#000000"
+                                            />
+                                        </svg>
+                                        <div class="text-lg font-semibold pl-1">Vegetarian</div>
+                                    </div>
+                                </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="halal-option" class="hidden peer" />
+                                <label
+                                    for="halal-option"
+                                    class="flex items-center justify-center p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-yellow-500 hover:text-gray-800 peer-checked:text-gray-800 hover:bg-gray-50"
+                                >
+                                    <div class="flex">
+                                        <img src="https://img.icons8.com/fluency-systems-filled/48/null/halal-sign.png" class="w-6 h-6" />
+                                        <div class="w-full text-lg font-semibold pl-1">Halal</div>
+                                    </div>
+                                </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="non-veg-option" class="hidden peer" />
+                                <label
+                                    for="non-veg-option"
+                                    class="flex items-center justify-center w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-yellow-500 hover:text-gray-800 peer-checked:text-gray-800 hover:bg-gray-50"
+                                >
+                                    <div class="flex">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            class="w-6"
+                                            viewBox="0 0 512 512"
+                                        >
+                                            <g>
+                                                <path
+                                                    class="st0"
+                                                    d="M110.26,202.977c-4.636-3.246-10.289-5.311-16.284-5.303c-6.003-0.008-11.664,2.057-16.3,5.303   c-6.979,4.912-12.054,12.192-15.584,20.725c-3.514,8.548-5.433,18.464-5.45,29.061c0.032,14.128,3.416,27.036,9.516,37.13   c3.058,5.035,6.849,9.395,11.517,12.648c4.636,3.254,10.297,5.327,16.3,5.312c5.995,0.016,11.648-2.058,16.284-5.312   c6.996-4.888,12.063-12.192,15.584-20.708c3.514-8.549,5.45-18.48,5.45-29.07c-0.024-14.128-3.4-27.045-9.5-37.13   C118.719,210.597,114.93,206.23,110.26,202.977z M105.185,279.791c-1.936,3.181-4.083,5.45-6.018,6.8   c-1.968,1.334-3.571,1.806-5.19,1.806c-1.627,0-3.229-0.472-5.189-1.806c-2.928-1.992-6.296-6.198-8.703-12.16   c-2.457-5.929-4.002-13.478-3.986-21.668c-0.033-10.923,2.774-20.708,6.654-27.036c1.936-3.156,4.083-5.441,6.027-6.783   c1.968-1.35,3.57-1.814,5.197-1.83c1.619,0.016,3.222,0.48,5.19,1.83c2.912,1.976,6.279,6.189,8.703,12.144   c2.44,5.945,3.986,13.486,3.986,21.676C111.879,263.686,109.073,273.455,105.185,279.791z"
+                                                />
+                                                <path
+                                                    class="st0"
+                                                    d="M512,223.221c0-17.105-6.963-32.729-18.204-43.93c-11.176-11.208-26.808-18.203-43.922-18.187   c-16.674-0.016-31.949,6.646-43.044,17.382c-7.499,7.223-13.127,16.39-16.25,26.662h-21.994c-1.464-1.521-3.124-3.277-4.88-5.164   c-3.92-4.23-8.247-9.11-10.655-12.233c-12.623-16.284-24.328-31.339-37.334-44.947c-19.44-20.432-42.279-37.488-73.562-48.567   c-31.298-11.118-70.502-16.634-124.34-16.65c-5.726,0-11.623,0.065-17.706,0.195v0.016C84.298,77.856,69.576,84.2,57.432,94.155   c-9.239,7.516-17.284,17.089-24.279,28.183C22.66,138.997,14.47,159.185,8.784,181.821C3.123,204.473,0,229.549,0,256   c0.041,47.037,9.761,89.747,26.508,122.046c8.402,16.146,18.618,29.769,30.924,39.823c12.16,9.939,26.882,16.291,42.702,16.356   c6.385,0.13,12.558,0.187,18.553,0.187c37.936,0,68.396-2.481,93.814-7.434c19.066-3.726,35.292-8.858,49.477-15.438   c21.302-9.826,37.765-22.921,51.837-37.871c13.949-14.794,25.784-31.249,38.992-49.062l16.072-17.732h21.701   c3.123,10.273,8.751,19.44,16.25,26.67c11.095,10.728,26.37,17.382,43.044,17.382c17.113,0,32.746-6.987,43.922-18.195   c11.241-11.2,18.204-26.816,18.204-43.93c0-12.022-3.514-23.262-9.468-32.788C508.486,246.492,512,235.243,512,223.221z    M127.292,396.819c-2.863,2.131-5.726,3.758-8.573,5.19c-0.016,0-0.024,0-0.032,0c-5.774,0-11.737-0.065-17.91-0.171l-0.162-0.025   h-0.162c-7.32-0.016-14.641-2.709-22.563-9.085c-5.888-4.774-11.843-11.64-17.316-20.334c-8.24-13.054-15.381-30.225-20.351-50.079   c-4.969-19.87-7.816-42.417-7.816-66.314c-0.049-42.442,9.094-80.743,22.855-107.081c6.832-13.176,14.771-23.286,22.628-29.638   c7.922-6.386,15.243-9.061,22.563-9.093h0.179h0.163c5.856-0.131,11.534-0.188,17.023-0.188c0.309,0,0.61,0.008,0.92,0.008   c2.838,1.424,5.694,3.066,8.556,5.189c13.534,9.988,26.613,28.102,36,52.365c9.435,24.239,15.275,54.512,15.258,88.438   c0.032,45.256-10.411,83.98-25.759,110.585C145.138,379.908,136.305,390.141,127.292,396.819z M347.666,276.887   c-3.4,6.515-8.459,13.9-15.421,22.148l-4.522,4.994l-0.472,0.635c-1.138,1.26-2.163,2.472-3.383,3.766l0.342,0.341   c-10.753,14.535-20.261,27.427-29.957,38.286c-7.962,8.938-16.056,16.584-25.32,23.181c-13.901,9.874-30.583,17.65-54.431,23.189   c-15.991,3.7-35.284,6.271-58.611,7.572c11.404-12.762,21.05-29.127,28.542-48.331c10.565-27.207,16.796-60.14,16.796-96.668   c-0.017-48.712-11.029-90.992-28.769-121.884c-4.962-8.622-10.501-16.251-16.479-22.97c17.332,1.115,32.469,2.994,45.686,5.62   c16.61,3.286,30.274,7.686,42.051,13.014c17.666,8.044,31.242,18.146,44.264,31.022c12.168,12.014,23.799,26.622,36.846,43.442   l-0.951,0.903c8.735,9.167,16.584,17.537,21.92,25.581c5.368,8.085,8.215,15.446,8.231,23.677   C354.027,260.717,352.319,267.949,347.666,276.887z M470.648,267.582c5.548,5.474,8.931,12.86,8.948,21.221   c-0.017,8.264-3.302,15.576-8.704,21.017c-5.433,5.4-12.753,8.694-21.017,8.703c-8.036-0.008-15.178-3.139-20.546-8.296   c-5.352-5.189-8.752-12.249-9.061-20.203l-0.618-15.544h-49.876c2.408-6.913,3.709-13.624,3.693-20.074   c0.016-5.962-1.026-11.558-2.75-16.861h48.932l0.618-15.544c0.309-7.963,3.709-15.015,9.061-20.196   c5.368-5.166,12.51-8.289,20.546-8.297c8.264,0.008,15.584,3.302,21.017,8.703c5.401,5.424,8.687,12.746,8.704,21.009   c-0.017,8.361-3.4,15.747-8.931,21.213l-11.826,11.582L470.648,267.582z"
+                                                />
+                                            </g>
+                                        </svg>
+                                        <div class="w-full text-lg font-semibold pl-1">Non-Veg</div>
+                                    </div>
+                                </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="gluten-option" class="hidden peer" />
+                                <label
+                                    for="gluten-option"
+                                    class="flex items-center justify-center w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-yellow-500 hover:text-gray-800 peer-checked:text-gray-800 hover:bg-gray-50"
+                                >
+                                    <div class="flex">
+                                        <svg class="w-6 text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                            <path
+                                                d="M15.2109 8.78899L3.4653 20.5347M8.90748 15.0925L9.10982 14.9292C9.30611 14.7589 9.48392 14.5681 9.64012 14.3598C10.854 12.7413 10.526 10.4451 8.90748 9.23119L8.70514 9.39448C8.50885 9.56474 8.33104 9.75557 8.17484 9.96383C6.96092 11.5824 7.28893 13.8786 8.90748 15.0925ZM8.90748 15.0925L9.07078 15.2948C9.24104 15.4911 9.43188 15.6689 9.64016 15.8252C11.2587 17.039 13.5548 16.711 14.7687 15.0925L14.6054 14.8901C14.4352 14.6938 14.2443 14.516 14.036 14.3598C12.4175 13.1459 10.1214 13.4739 8.90748 15.0925ZM11.8381 12.1618L12.0404 11.9985C12.2367 11.8283 12.4145 11.6375 12.5707 11.4292C13.7847 9.81064 13.4566 7.51447 11.8381 6.30055L11.6358 6.46384C11.4395 6.6341 11.2617 6.82492 11.1055 7.03319C9.89154 8.65174 10.2195 10.9479 11.8381 12.1618ZM11.8381 12.1618L12.0014 12.3642C12.1717 12.5605 12.3625 12.7383 12.5708 12.8945C14.1893 14.1084 16.4854 13.7804 17.6993 12.1618L17.536 11.9595C17.3658 11.7632 17.1749 11.5854 16.9667 11.4292C15.3481 10.2153 13.052 10.5433 11.8381 12.1618ZM14.7687 9.23119L14.9711 9.0679C15.1673 8.89764 15.3452 8.70682 15.5014 8.49855C16.7153 6.88 16.3873 4.58383 14.7687 3.36991L14.5664 3.5332C14.3701 3.70346 14.1923 3.89428 14.0361 4.10255C12.8222 5.7211 13.1502 8.01727 14.7687 9.23119ZM14.7687 9.23119L14.932 9.43354C15.1023 9.62984 15.2931 9.80766 15.5014 9.96387C17.1199 11.1778 19.4161 10.8497 20.6299 9.23119L20.4667 9.02885C20.2964 8.83254 20.1056 8.65473 19.8973 8.49852C18.2787 7.28463 15.9826 7.61266 14.7687 9.23119ZM5.90748 18.0925L6.10982 17.9292C6.30611 17.7589 6.48392 17.5681 6.64012 17.3598C7.85405 15.7413 7.52603 13.4451 5.90748 12.2312L5.70514 12.3945C5.50885 12.5647 5.33104 12.7556 5.17484 12.9638C3.96092 14.5824 4.28893 16.8786 5.90748 18.0925ZM5.90748 18.0925L6.07078 18.2948C6.24104 18.4911 6.43188 18.6689 6.64016 18.8252C8.25869 20.039 10.5548 19.711 11.7687 18.0925L11.6054 17.8901C11.4352 17.6938 11.2443 17.516 11.036 17.3598C9.41751 16.1459 7.12137 16.4739 5.90748 18.0925ZM17.6292 7.40757C17.3714 7.44439 17.1108 7.45359 16.8516 7.43518L16.593 7.40753C16.3069 5.40469 17.6986 3.54913 19.7014 3.26301C20.045 3.21392 20.3939 3.21392 20.7375 3.26301C21.0237 5.26589 19.632 7.12145 17.6292 7.40757Z"
+                                            />
+                                        </svg>
+                                        <div class="w-full text-lg font-semibold">Gluten-Free</div>
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="p-5 grid grid-cols-2 gap-5 w-full">
+                        <div class="">
+                            <h3 class="mb-5 text-lg font-medium text-gray-900">Choose cuisine:</h3>
+                            <ul class="grid items-center gap-5 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-2">
+                                <li>
+                                    <input type="checkbox" id="indian-option" class="hidden peer" required="" />
+                                    <label
+                                        for="indian-option"
+                                        class="flex justify-center items-center p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-yellow-500 hover:text-gray-800 peer-checked:text-gray-800 hover:bg-gray-50"
+                                    >
+                                        <div class="flex">
+                                            <div class="text-lg font-semibold pl-1">Indian</div>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="chinese-option" class="hidden peer" />
+                                    <label
+                                        for="chinese-option"
+                                        class="flex items-center justify-center p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-yellow-500 hover:text-gray-800 peer-checked:text-gray-800 hover:bg-gray-50"
+                                    >
+                                        <div class="flex">
+                                            <div class="w-full text-lg font-semibold pl-1">Chinese</div>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="Pakistani-option" class="hidden peer" />
+                                    <label
+                                        for="Pakistani-option"
+                                        class="flex items-center justify-center w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-yellow-500 hover:text-gray-800 peer-checked:text-gray-800 hover:bg-gray-50"
+                                    >
+                                        <div class="flex">
+                                            <div class="w-full text-lg font-semibold pl-1">Pakistani</div>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="Western-option" class="hidden peer" />
+                                    <label
+                                        for="Western-option"
+                                        class="flex items-center justify-center w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-yellow-500 hover:text-gray-800 peer-checked:text-gray-800 hover:bg-gray-50"
+                                    >
+                                        <div class="flex">
+                                            <div class="w-full text-lg font-semibold">Western</div>
+                                        </div>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="grid lg:grid-cols-2 gap-5 sm:grid-cols-1 items-center">
+                            <div>
+                                <h3 class="mb-5 text-lg font-medium text-gray-900">Cooking time:</h3>
+                                <ul class="w-full h-40 overflow-y-auto text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg">
+                                    <li class="w-full border-b border-gray-200 rounded-t-lg">
+                                        <div class="flex items-center pl-3">
+                                            <input
+                                                id="time1-checkbox"
+                                                type="checkbox"
+                                                class="w-4 h-4 text-yellow-500 bg-gray-100 border-gray-300 rounded focus:ring-yellow-600"
+                                            />
+                                            <label for="time1-checkbox" class="w-full py-3 ml-2 text-sm font-medium text-gray-900">30 mins</label>
+                                        </div>
+                                    </li>
+                                    <li class="w-full border-b border-gray-200 rounded-t-lg">
+                                        <div class="flex items-center pl-3">
+                                            <input
+                                                id="time2-checkbox"
+                                                type="checkbox"
+                                                class="w-4 h-4 text-yellow-500 bg-gray-100 border-gray-300 rounded focus:ring-yellow-600"
+                                            />
+                                            <label for="time2-checkbox" class="w-full py-3 ml-2 text-sm font-medium text-gray-900">45 mins</label>
+                                        </div>
+                                    </li>
+                                    <li class="w-full border-b border-gray-200 rounded-t-lg">
+                                        <div class="flex items-center pl-3">
+                                            <input
+                                                id="time3-checkbox"
+                                                type="checkbox"
+                                                class="w-4 h-4 text-yellow-500 bg-gray-100 border-gray-300 rounded focus:ring-yellow-600"
+                                            />
+                                            <label for="time3-checkbox" class="w-full py-3 ml-2 text-sm font-medium text-gray-900">1 hr</label>
+                                        </div>
+                                    </li>
+                                    <li class="w-full border-b border-gray-200 rounded-t-lg">
+                                        <div class="flex items-center pl-3">
+                                            <input
+                                                id="time4-checkbox"
+                                                type="checkbox"
+                                                class="w-4 h-4 text-yellow-500 bg-gray-100 border-gray-300 rounded focus:ring-yellow-600"
+                                            />
+                                            <label for="time4-checkbox" class="w-full py-3 ml-2 text-sm font-medium text-gray-900">1hr 15 mins</label>
+                                        </div>
+                                    </li>
+                                    <li class="w-full rounded-t-lg">
+                                        <div class="flex items-center pl-3">
+                                            <input
+                                                id="time5-checkbox"
+                                                type="checkbox"
+                                                class="w-4 h-4 text-yellow-500 bg-gray-100 border-gray-300 rounded focus:ring-yellow-600"
+                                            />
+                                            <label for="time5-checkbox" class="w-full py-3 ml-2 text-sm font-medium text-gray-900">1hr 30 mins</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h3 class="mb-5 text-lg font-medium text-gray-900">Method:</h3>
+                                <ul class="w-full h-40 overflow-y-auto text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg">
+                                    <li class="w-full border-b border-gray-200 rounded-t-lg">
+                                        <div class="flex items-center pl-3">
+                                            <input
+                                                id="fryer-checkbox"
+                                                type="checkbox"
+                                                class="w-4 h-4 text-yellow-500 bg-gray-100 border-gray-300 rounded focus:ring-yellow-600"
+                                            />
+                                            <label for="fryer-checkbox" class="w-full py-3 ml-2 text-sm font-medium text-gray-900">Air Fryer</label>
+                                        </div>
+                                    </li>
+                                    <li class="w-full border-b border-gray-200 rounded-t-lg">
+                                        <div class="flex items-center pl-3">
+                                            <input
+                                                id="Blender-checkbox"
+                                                type="checkbox"
+                                                class="w-4 h-4 text-yellow-500 bg-gray-100 border-gray-300 rounded focus:ring-yellow-600"
+                                            />
+                                            <label for="Blender-checkbox" class="w-full py-3 ml-2 text-sm font-medium text-gray-900">Blender</label>
+                                        </div>
+                                    </li>
+                                    <li class="w-full border-b border-gray-200 rounded-t-lg">
+                                        <div class="flex items-center pl-3">
+                                            <input
+                                                id="grill-checkbox"
+                                                type="checkbox"
+                                                class="w-4 h-4 text-yellow-500 bg-gray-100 border-gray-300 rounded focus:ring-yellow-600"
+                                            />
+                                            <label for="grill-checkbox" class="w-full py-3 ml-2 text-sm font-medium text-gray-900">Grill</label>
+                                        </div>
+                                    </li>
+                                    <li class="w-full border-b border-gray-200 rounded-t-lg">
+                                        <div class="flex items-center pl-3">
+                                            <input
+                                                id="mw-checkbox"
+                                                type="checkbox"
+                                                class="w-4 h-4 text-yellow-500 bg-gray-100 border-gray-300 rounded focus:ring-yellow-600"
+                                            />
+                                            <label for="mw-checkbox" class="w-full py-3 ml-2 text-sm font-medium text-gray-900">Microwave</label>
+                                        </div>
+                                    </li>
+                                    <li class="w-full border-b border-gray-200 rounded-t-lg">
+                                        <div class="flex items-center pl-3">
+                                            <input
+                                                id="oven-checkbox"
+                                                type="checkbox"
+                                                class="w-4 h-4 text-yellow-500 bg-gray-100 border-gray-300 rounded focus:ring-yellow-600"
+                                            />
+                                            <label for="oven-checkbox" class="w-full py-3 ml-2 text-sm font-medium text-gray-900">Oven</label>
+                                        </div>
+                                    </li>
+                                    <li class="w-full rounded-t-lg">
+                                        <div class="flex items-center pl-3">
+                                            <input
+                                                id="noven-checkbox"
+                                                type="checkbox"
+                                                class="w-4 h-4 text-yellow-500 bg-gray-100 border-gray-300 rounded focus:ring-yellow-600"
+                                            />
+                                            <label for="noven-checkbox" class="w-full py-3 ml-2 text-sm font-medium text-gray-900">No Oven</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="px-5 pb-5">
+                        <button
+                            type="button"
+                            class="flex justify-self-end text-white bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-600 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                        >
+                            Clear Filter
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="mb-4 border-b border-gray-200">
+                <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
+                    <li class="mr-2" role="presentation">
+                        <button
+                            class="inline-flex p-4 border-b-2 rounded-t-lg text-gray-900 hover:text-yellow-500 aria-selected:text-yellow-500 aria-selected:border-yellow-500"
+                            id="myrecipes-tab"
+                            data-tabs-target="#myrecipes"
+                            type="button"
+                            role="tab"
+                            aria-controls="myrecipes"
+                            aria-selected="true"
+                        >
+                            <svg
+                                class="w-5 h-5 mr-2 text-gray-900 group-hover:text-yellow-500"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 512 512"
+                            >
+                                <path
+                                    fill="#000000"
+                                    d="M445.588 56l-.026 384.352c6.881 11.323 14 15.677 19.97 15.648 5.924-.028 12.967-4.434 19.714-15.418L466.82 244.27l-.215-2.391 1.475-1.906c21.174-27.169 28.573-74.108 22.533-113.81-3.02-19.852-9.342-37.82-18.195-50.522-7.424-10.652-16.28-17.447-26.828-19.641h-.002zm-372.375.004l-.016 67.127-12.56-.016V56.008H46.332l.002 67.11H33.756v-67.11h-14.57v103.228c-.001 11.417 6.23 17.748 16.04 21.662l4.06 1.622-.09 4.37c-2 84.57-3.977 169.139-5.962 253.708C40.074 451.79 47.1 456.028 52.95 456c5.85-.028 12.87-4.377 19.623-15.432-2.315-84.547-4.63-169.096-6.941-253.644l-.12-4.4 4.073-1.606c10.324-4.106 17.039-11.074 17.039-21.676V56.004h-13.41zM256 95A161 161 0 0 0 95 256a161 161 0 0 0 161 161 161 161 0 0 0 161-161A161 161 0 0 0 256 95z"
+                                />
+                            </svg>
+                            My Recipes
+                        </button>
+                    </li>
+                    <li class="mr-2" role="presentation">
+                        <button
+                            class="inline-flex p-4 border-b-2 rounded-t-lg text-gray-900 hover:text-yellow-500 aria-selected:text-yellow-500 aria-selected:border-yellow-500"
+                            id="liked-tab"
+                            data-tabs-target="#liked"
+                            type="button"
+                            role="tab"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="black"
+                                viewBox="0 0 24 24"
+                                stroke-width="1.5"
+                                stroke="currentColor"
+                                class="w-5 h-5 mr-2 text-gray-400 group-hover:text-gray-500"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                                />
+                            </svg>
+
+                            Liked
+                        </button>
+                    </li>
+                    <li class="mr-2" role="presentation">
+                        <button
+                            class="inline-flex p-4 border-b-2 rounded-t-lg text-gray-900 hover:text-yellow-500 aria-selected:text-yellow-500 aria-selected:border-yellow-500"
+                            id="saved-tab"
+                            data-tabs-target="#saved"
+                            type="button"
+                            role="tab"
+                            aria-controls="saved"
+                            aria-selected="false"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="black"
+                                viewBox="0 0 24 24"
+                                stroke-width="1.5"
+                                stroke="currentColor"
+                                class="w-5 h-5 mr-2 text-gray-400 group-hover:text-gray-500"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z"
+                                />
+                            </svg>
+
+                            Saved
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div id="myTabContent">
+                <div class="hidden p-4" id="myrecipes" role="tabpanel" aria-labelledby="myrecipes-tab">
+                    <div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5">
+                        <div class="w-full max-w-md bg-white border border-gray-200 rounded-lg shadow">
+                            <div
+                                class="flex items-center absolute ml-2 p-2 mt-2 bg-yellow-500 text-gray-800 text-xs uppercase font-bold rounded-full"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="1.5"
+                                    stroke="currentColor"
+                                    class="w-5 h-5 text-white inline-block"
+                                >
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    <span class="px-1 text-white">1hr 15mins</span>
+                                </svg>
+                            </div>
+
+                            <a href="recipePage.html" rel="noreferrer noopener" class="overflow-hidden">
+                                <img class="rounded-t-lg" src="../images/recipe.jpg" alt="product image" />
+                                <div class="px-5 pb-5">
+                                    <div class="flex">
+                                        <a href="recipePage.html" class="flex w-full">
+                                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 pt-2">Spagetthi Bolognese</h5>
+                                        </a>
+                                        <div title="Vegetarian" class="flex self-end">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                title="Vegetarian"
+                                                class="w-6 text-green-600"
+                                                viewBox="0 0 24 24"
+                                                fill="currentColor"
+                                            >
+                                                <path
+                                                    d="M14 10L4 20M20 7C20 12.5228 15.5228 17 10 17C9.08396 17 8.19669 16.8768 7.35385 16.6462C7.12317 15.8033 7 14.916 7 14C7 8.47715 11.4772 4 17 4C17.916 4 18.8033 4.12317 19.6462 4.35385C19.8768 5.19669 20 6.08396 20 7Z"
+                                                    stroke="#000000"
+                                                />
+                                            </svg>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center my-2">
+                                        <svg
+                                            aria-hidden="true"
+                                            class="w-5 h-5 text-yellow-300"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <title>First star</title>
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            ></path>
+                                        </svg>
+                                        <svg
+                                            aria-hidden="true"
+                                            class="w-5 h-5 text-yellow-300"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <title>Second star</title>
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            ></path>
+                                        </svg>
+                                        <svg
+                                            aria-hidden="true"
+                                            class="w-5 h-5 text-yellow-300"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <title>Third star</title>
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            ></path>
+                                        </svg>
+                                        <svg
+                                            aria-hidden="true"
+                                            class="w-5 h-5 text-yellow-300"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <title>Fourth star</title>
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            ></path>
+                                        </svg>
+                                        <svg
+                                            aria-hidden="true"
+                                            class="w-5 h-5 text-yellow-300"
+                                            fill="gray"
+                                            viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <title>Fifth star</title>
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            ></path>
+                                        </svg>
+                                        <span class="bg-yellow-500 text-white text-xs font-semibold mr-2 px-2.5 py-0.5 rounded ml-3">4.0</span>
+                                    </div>
+
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-start">
+                                            <svg
+                                                title="Save"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="red"
+                                                viewBox="0 0 24 24"
+                                                stroke-width="1.5"
+                                                stroke="currentColor"
+                                                class="w-6 h-6 text-red-500 cursor-pointer hover:fill-red-500"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                                                />
+                                            </svg>
+                                            <svg
+                                                title="Comment"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke-width="1.5"
+                                                stroke="currentColor"
+                                                class="w-6 h-6 mx-1 cursor-pointer text-yellow-600 hover:fill-yellow-600"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    d="M2.25 12.76c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.076-4.076a1.526 1.526 0 011.037-.443 48.282 48.282 0 005.68-.494c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"
+                                                />
+                                            </svg>
+                                            <svg
+                                                title="Share"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke-width="1.5"
+                                                stroke="currentColor"
+                                                class="w-6 h-6 cursor-pointer text-green-500 hover:fill-green-500"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z"
+                                                />
+                                            </svg>
+                                        </div>
+
+                                        <a
+                                            href="#"
+                                            class="text-white bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-600 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                                            >Add to cart</a
+                                        >
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden p-4" id="liked" role="tabpanel" aria-labelledby="liked-tab">
+                    <div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5">
+                        <div class="w-full max-w-md bg-white border border-gray-200 rounded-lg shadow">
+                            <div
+                                class="flex items-center absolute ml-2 p-2 mt-2 bg-yellow-500 text-gray-800 text-xs uppercase font-bold rounded-full"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="1.5"
+                                    stroke="currentColor"
+                                    class="w-5 h-5 text-white inline-block"
+                                >
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    <span class="px-1 text-white">1hr 15mins</span>
+                                </svg>
+                            </div>
+
+                            <a href="recipePage.html" rel="noreferrer noopener" class="overflow-hidden">
+                                <img class="rounded-t-lg" src="../images/recipe.jpg" alt="product image" />
+                                <div class="px-5 pb-5">
+                                    <div class="flex">
+                                        <a href="recipePage.html" class="flex w-full">
+                                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 pt-2">Spagetthi Bolognese</h5>
+                                        </a>
+                                        <div title="Vegetarian" class="flex self-end">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                title="Vegetarian"
+                                                class="w-6 text-green-600"
+                                                viewBox="0 0 24 24"
+                                                fill="currentColor"
+                                            >
+                                                <path
+                                                    d="M14 10L4 20M20 7C20 12.5228 15.5228 17 10 17C9.08396 17 8.19669 16.8768 7.35385 16.6462C7.12317 15.8033 7 14.916 7 14C7 8.47715 11.4772 4 17 4C17.916 4 18.8033 4.12317 19.6462 4.35385C19.8768 5.19669 20 6.08396 20 7Z"
+                                                    stroke="#000000"
+                                                />
+                                            </svg>
+                                        </div>
+                                    </div>
+
+                                    <span class="text-sm text-gray-400">by Megh Pathak</span>
+
+                                    <div class="flex items-center my-2">
+                                        <svg
+                                            aria-hidden="true"
+                                            class="w-5 h-5 text-yellow-300"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <title>First star</title>
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            ></path>
+                                        </svg>
+                                        <svg
+                                            aria-hidden="true"
+                                            class="w-5 h-5 text-yellow-300"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <title>Second star</title>
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            ></path>
+                                        </svg>
+                                        <svg
+                                            aria-hidden="true"
+                                            class="w-5 h-5 text-yellow-300"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <title>Third star</title>
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            ></path>
+                                        </svg>
+                                        <svg
+                                            aria-hidden="true"
+                                            class="w-5 h-5 text-yellow-300"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <title>Fourth star</title>
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            ></path>
+                                        </svg>
+                                        <svg
+                                            aria-hidden="true"
+                                            class="w-5 h-5 text-yellow-300"
+                                            fill="gray"
+                                            viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <title>Fifth star</title>
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            ></path>
+                                        </svg>
+                                        <span class="bg-yellow-500 text-white text-xs font-semibold mr-2 px-2.5 py-0.5 rounded ml-3">4.0</span>
+                                    </div>
+
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-start">
+                                            <svg
+                                                title="Save"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="red"
+                                                viewBox="0 0 24 24"
+                                                stroke-width="1.5"
+                                                stroke="currentColor"
+                                                class="w-6 h-6 text-red-500 cursor-pointer hover:fill-red-500"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                                                />
+                                            </svg>
+                                            <svg
+                                                title="Comment"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke-width="1.5"
+                                                stroke="currentColor"
+                                                class="w-6 h-6 mx-1 cursor-pointer text-yellow-600 hover:fill-yellow-600"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    d="M2.25 12.76c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.076-4.076a1.526 1.526 0 011.037-.443 48.282 48.282 0 005.68-.494c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"
+                                                />
+                                            </svg>
+                                            <svg
+                                                title="Share"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke-width="1.5"
+                                                stroke="currentColor"
+                                                class="w-6 h-6 cursor-pointer text-green-500 hover:fill-green-500"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z"
+                                                />
+                                            </svg>
+                                        </div>
+
+                                        <a
+                                            href="#"
+                                            class="text-white bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-600 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                                            >Add to cart</a
+                                        >
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="w-full max-w-md bg-white border border-gray-200 rounded-lg shadow">
+                            <div
+                                class="flex items-center absolute ml-2 p-2 mt-2 bg-yellow-500 text-gray-800 text-xs uppercase font-bold rounded-full"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="1.5"
+                                    stroke="currentColor"
+                                    class="w-5 h-5 text-white inline-block"
+                                >
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    <span class="px-1 text-white">1hr 15mins</span>
+                                </svg>
+                            </div>
+
+                            <a href="recipePage.html" rel="noreferrer noopener" class="overflow-hidden">
+                                <img class="rounded-t-lg" src="../images/biryani.jpg" alt="product image" />
+                                <div class="px-5 pb-5">
+                                    <div class="flex">
+                                        <a href="recipePage.html" class="flex w-full">
+                                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 pt-2">Lamb Biryani</h5>
+                                        </a>
+                                        <img
+                                            title="Halal"
+                                            src="https://img.icons8.com/fluency-systems-filled/48/null/halal-sign.png"
+                                            class="w-6 h-6 flex self-end"
+                                        />
+                                    </div>
+                                    <span class="text-sm text-gray-400">by Samir Ghias</span>
+
+                                    <div class="flex items-center my-2">
+                                        <svg
+                                            aria-hidden="true"
+                                            class="w-5 h-5 text-yellow-300"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <title>First star</title>
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            ></path>
+                                        </svg>
+                                        <svg
+                                            aria-hidden="true"
+                                            class="w-5 h-5 text-yellow-300"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <title>Second star</title>
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            ></path>
+                                        </svg>
+                                        <svg
+                                            aria-hidden="true"
+                                            class="w-5 h-5 text-yellow-300"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <title>Third star</title>
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            ></path>
+                                        </svg>
+                                        <svg
+                                            aria-hidden="true"
+                                            class="w-5 h-5 text-yellow-300"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <title>Fourth star</title>
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            ></path>
+                                        </svg>
+                                        <svg
+                                            aria-hidden="true"
+                                            class="w-5 h-5 text-yellow-300"
+                                            fill="gray"
+                                            viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <title>Fifth star</title>
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            ></path>
+                                        </svg>
+                                        <span class="bg-yellow-500 text-white text-xs font-semibold mr-2 px-2.5 py-0.5 rounded ml-3">4.5</span>
+                                    </div>
+
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-start">
+                                            <svg
+                                                title="Save"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="red"
+                                                viewBox="0 0 24 24"
+                                                stroke-width="1.5"
+                                                stroke="currentColor"
+                                                class="w-6 h-6 text-red-500 cursor-pointer hover:fill-red-500"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                                                />
+                                            </svg>
+                                            <svg
+                                                title="Comment"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke-width="1.5"
+                                                stroke="currentColor"
+                                                class="w-6 h-6 mx-1 cursor-pointer text-yellow-600 hover:fill-yellow-600"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    d="M2.25 12.76c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.076-4.076a1.526 1.526 0 011.037-.443 48.282 48.282 0 005.68-.494c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"
+                                                />
+                                            </svg>
+                                            <svg
+                                                title="Share"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke-width="1.5"
+                                                stroke="currentColor"
+                                                class="w-6 h-6 cursor-pointer text-green-500 hover:fill-green-500"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z"
+                                                />
+                                            </svg>
+                                        </div>
+
+                                        <a
+                                            href="#"
+                                            class="text-white bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-600 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                                            >Add to cart</a
+                                        >
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden p-4" id="saved" role="tabpanel" aria-labelledby="saved-tab">
+                    <div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5">
+                        <div class="w-full max-w-md bg-white border border-gray-200 rounded-lg shadow">
+                            <div
+                                class="flex items-center absolute ml-2 p-2 mt-2 bg-yellow-500 text-gray-800 text-xs uppercase font-bold rounded-full"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="1.5"
+                                    stroke="currentColor"
+                                    class="w-5 h-5 text-white inline-block"
+                                >
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    <span class="px-1 text-white">1hr</span>
+                                </svg>
+                            </div>
+
+                            <a href="recipePage.html" rel="noreferrer noopener" class="overflow-hidden">
+                                <img class="rounded-t-lg" src="../images/donut.jpg" alt="product image" />
+                                <div class="px-5 pb-5">
+                                    <div class="flex">
+                                        <a href="recipePage.html" class="flex w-full">
+                                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 pt-2">Chocolate Glazed Donuts</h5>
+                                        </a>
+                                        <div title="Gluten-Free" class="flex self-end">
+                                            <svg class="w-6 text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                                <path
+                                                    d="M15.2109 8.78899L3.4653 20.5347M8.90748 15.0925L9.10982 14.9292C9.30611 14.7589 9.48392 14.5681 9.64012 14.3598C10.854 12.7413 10.526 10.4451 8.90748 9.23119L8.70514 9.39448C8.50885 9.56474 8.33104 9.75557 8.17484 9.96383C6.96092 11.5824 7.28893 13.8786 8.90748 15.0925ZM8.90748 15.0925L9.07078 15.2948C9.24104 15.4911 9.43188 15.6689 9.64016 15.8252C11.2587 17.039 13.5548 16.711 14.7687 15.0925L14.6054 14.8901C14.4352 14.6938 14.2443 14.516 14.036 14.3598C12.4175 13.1459 10.1214 13.4739 8.90748 15.0925ZM11.8381 12.1618L12.0404 11.9985C12.2367 11.8283 12.4145 11.6375 12.5707 11.4292C13.7847 9.81064 13.4566 7.51447 11.8381 6.30055L11.6358 6.46384C11.4395 6.6341 11.2617 6.82492 11.1055 7.03319C9.89154 8.65174 10.2195 10.9479 11.8381 12.1618ZM11.8381 12.1618L12.0014 12.3642C12.1717 12.5605 12.3625 12.7383 12.5708 12.8945C14.1893 14.1084 16.4854 13.7804 17.6993 12.1618L17.536 11.9595C17.3658 11.7632 17.1749 11.5854 16.9667 11.4292C15.3481 10.2153 13.052 10.5433 11.8381 12.1618ZM14.7687 9.23119L14.9711 9.0679C15.1673 8.89764 15.3452 8.70682 15.5014 8.49855C16.7153 6.88 16.3873 4.58383 14.7687 3.36991L14.5664 3.5332C14.3701 3.70346 14.1923 3.89428 14.0361 4.10255C12.8222 5.7211 13.1502 8.01727 14.7687 9.23119ZM14.7687 9.23119L14.932 9.43354C15.1023 9.62984 15.2931 9.80766 15.5014 9.96387C17.1199 11.1778 19.4161 10.8497 20.6299 9.23119L20.4667 9.02885C20.2964 8.83254 20.1056 8.65473 19.8973 8.49852C18.2787 7.28463 15.9826 7.61266 14.7687 9.23119ZM5.90748 18.0925L6.10982 17.9292C6.30611 17.7589 6.48392 17.5681 6.64012 17.3598C7.85405 15.7413 7.52603 13.4451 5.90748 12.2312L5.70514 12.3945C5.50885 12.5647 5.33104 12.7556 5.17484 12.9638C3.96092 14.5824 4.28893 16.8786 5.90748 18.0925ZM5.90748 18.0925L6.07078 18.2948C6.24104 18.4911 6.43188 18.6689 6.64016 18.8252C8.25869 20.039 10.5548 19.711 11.7687 18.0925L11.6054 17.8901C11.4352 17.6938 11.2443 17.516 11.036 17.3598C9.41751 16.1459 7.12137 16.4739 5.90748 18.0925ZM17.6292 7.40757C17.3714 7.44439 17.1108 7.45359 16.8516 7.43518L16.593 7.40753C16.3069 5.40469 17.6986 3.54913 19.7014 3.26301C20.045 3.21392 20.3939 3.21392 20.7375 3.26301C21.0237 5.26589 19.632 7.12145 17.6292 7.40757Z"
+                                                />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <span class="text-sm text-gray-400">by Aiela Ayaz</span>
+
+                                    <div class="flex items-center my-2">
+                                        <svg
+                                            aria-hidden="true"
+                                            class="w-5 h-5 text-yellow-300"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <title>First star</title>
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            ></path>
+                                        </svg>
+                                        <svg
+                                            aria-hidden="true"
+                                            class="w-5 h-5 text-yellow-300"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <title>Second star</title>
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            ></path>
+                                        </svg>
+                                        <svg
+                                            aria-hidden="true"
+                                            class="w-5 h-5 text-yellow-300"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <title>Third star</title>
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            ></path>
+                                        </svg>
+                                        <svg
+                                            aria-hidden="true"
+                                            class="w-5 h-5 text-yellow-300"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <title>Fourth star</title>
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            ></path>
+                                        </svg>
+                                        <svg
+                                            aria-hidden="true"
+                                            class="w-5 h-5 text-yellow-300"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <title>Fifth star</title>
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            ></path>
+                                        </svg>
+                                        <span class="bg-yellow-500 text-white text-xs font-semibold mr-2 px-2.5 py-0.5 rounded ml-3">5.0</span>
+                                    </div>
+
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-start">
+                                            <svg
+                                                title="Like"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke-width="1.5"
+                                                stroke="currentColor"
+                                                class="w-6 h-6 text-red-500 cursor-pointer hover:fill-red-500"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                                                />
+                                            </svg>
+                                            <svg
+                                                title="Comment"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke-width="1.5"
+                                                stroke="currentColor"
+                                                class="w-6 h-6 mx-1 cursor-pointer text-yellow-600 hover:fill-yellow-600"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    d="M2.25 12.76c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.076-4.076a1.526 1.526 0 011.037-.443 48.282 48.282 0 005.68-.494c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"
+                                                />
+                                            </svg>
+                                            <svg
+                                                title="Share"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke-width="1.5"
+                                                stroke="currentColor"
+                                                class="w-6 h-6 cursor-pointer text-green-500 hover:fill-green-500"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z"
+                                                />
+                                            </svg>
+                                        </div>
+
+                                        <div class="flex items-center">
+                                            <svg
+                                                title="Save"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="black"
+                                                viewBox="0 0 24 24"
+                                                stroke-width="1.5"
+                                                stroke="currentColor"
+                                                class="w-6 h-6 cursor-pointer mr-1 hover:fill-black"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z"
+                                                />
+                                            </svg>
+
+                                            <a
+                                                href="#"
+                                                class="text-white bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-600 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                                                >Add to cart</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+    </body>
+</html>
