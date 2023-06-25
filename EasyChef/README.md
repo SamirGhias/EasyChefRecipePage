@@ -1,5 +1,7 @@
 # Easy Chef Website Project - Phase 1 (Static HTML + TailWind CSS )
 
+https://samirghias.github.io/EasyChef/pages/index.html
+
 For phase 1 of my CSC309 project, We were tasked to implement most of the HTML/CSS of the projects front facing platform. Our deliverable for this phase was a static demo of Easy Chef. Our codes were only allowed to consist of HTML and CSS files, without any backend/frontend servers. We were not supposed to implement any JS logic at this phase, except for JS files that are imported from external sources. Forms and buttons do not send any request, but the links point to various pages included in the application.
 
 Using a CSS framework (e.g., Bootstrap, Semantic, Bulma) was strongly recommended but the styling was implemented with Tailwind CSS. We were allowed to use online templates to consolidate your design. However, since it is a static website at this stage, you cannot use any frontend framework, including any React-dependent CSS framework.
