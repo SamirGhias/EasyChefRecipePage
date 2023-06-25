@@ -1,8 +1,8 @@
-# Phase 1 deliverables
+# Easy Chef Website Project - Phase 1 (Static HTML + TailWind CSS )
 
-For phase 1, you are to implement most of the HTML/CSS of your project. Your deliverable for this website is a static demo of Easy Chef. Your codes should only consist of HTML and CSS files, without any backend/frontend servers. You should not implement any JS logic at this phase, except for JS files that are imported from external sources. Also, note that you will need to refactor your files when you migrate to React at phase 3. You can find an example of static demos here. A static demo showcases the design of the pages by filling them up with some random test data. Forms and buttons do not send any request, but the links point to various pages included in the application.
+For phase 1 of my CSC309 project, We were tasked to implement most of the HTML/CSS of the projects front facing platform. Our deliverable for this phase was a static demo of Easy Chef. Our codes were only allowed to consist of HTML and CSS files, without any backend/frontend servers. We were not supposed to implement any JS logic at this phase, except for JS files that are imported from external sources. Forms and buttons do not send any request, but the links point to various pages included in the application.
 
-Using a CSS framework (e.g., Bootstrap, Semantic, Bulma) is strongly recommended as plain CSS will take enormous hours to implement and debug. You can also use online templates to consolidate your design. However, since it is a static website at this stage, you cannot use any frontend framework, including any React-dependent CSS framework.
+Using a CSS framework (e.g., Bootstrap, Semantic, Bulma) was strongly recommended but the styling was implemented with Tailwind CSS. We were allowed to use online templates to consolidate your design. However, since it is a static website at this stage, you cannot use any frontend framework, including any React-dependent CSS framework.
 
 The detailed structure or the exact number of pages is up to you. However, your website should be navigable. That is, different pages should be connected to each other through clickable links and buttons. The general structure follows:
 
